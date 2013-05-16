@@ -1,256 +1,222 @@
+<!DOCTYPE html>
 <html>
-<head>
-<title>hello world</title>
-<script type="text/javascript" src="js/jquery.js" > </script>
-<!--script type="text/javascript" src="js/jQValidator.js"></script-->
-<script type="text/javascript" src="js/jQvalidatorAfirme.js"></script>
-</head>
-<body>
+    <head>
+        <title>jQValidator 1.5Beta Demo Page</title>
+        <script type="text/javascript" src="js/jquery-1.9.0.min.js" ></script>
+        <script type="text/javascript" src="js/jQValidator.js" charset="ISO-8859-1"></script>
+    </head>
+    <body>
 
-<style>
-.errorField{
-	background-color:#F6CECE;
-	border-color: #A4A4A4;
-}
-.inline{
-	display: inline-block;
-}
-.w80{width:80px;}
-.w100{width:100px;}
-.w120{width:120px;}
-.w140{width:140px;}
-.w160{width:160px;}
-.w180{width:180px;}
-.w200{width:200px;}
-.w220{width:220px;}
-.w240{width:240px;}
+    <h1>jQValidator 1.5Beta Demo</h1>
+    <br/>
+    <br/>
 
-label, input{
-    display:inline-block;
-}
-label{
-	margin: 5px 0;
-	width:150px;
-	margin-right: 5px;
-}
-button{
-	margin: 10px 100px;
-	width: 200px;
-	height: 50px;
-}
-</style>
 
-<h2>jQValidator</h1>
-<h3>Tavech Js Validator</h3>
-<br/>
-<br/>
-	
-	
-<fieldset class="inline w160">
-	<label>Prueba de Formulario formDeDatos</label>
-	<form id ="formDeDatos">
-		<textarea id="ponchis"></textarea>
-		<label for="campoText1">Ninguna Clase agregada</label>
-		<input type="text" name="campoText1"/>
-		<br />
-		<label for="campoText1">Decimal Format (jqnumber4d2)</label>
-		<input type="text" name="campoText1" class="jqnumber4d2"/>
-		<br />
-		<label for="campoText2">required</label>
-		<input type="text" name="campoText2" class="jqrequired"/>
-		<br />
-		<label for="campoText3">alphabetic</label>
-		<input type="text" name="campoText3" class="jqalphabetic"/>
-		<br />
-		<label for="campoText4">alphabetic + required</label>
-		<input type="text" name="campoText4" class="jqalphabetic jqrequired"/>
-		<br />
-		<label for="campoText3">alphabetic + restrict</label>
-		<input type="text" name="campoText3" class="jqalphabetic jqrestrict"/>
-		<br />
-		<label for="campoText3">alphabetic + restrict + toUpper</label>
-		<input type="text" name="campoText3" class="jqalphabetic jqrestrict jqup"/>
-		<br />
-		<label for="campoText5">alphanumeric</label>
-		<input type="text" name="campoText5" class="jqalphanumeric"/>
-		<br />
-		<label for="campoText5">alphanumeric + restrict</label>
-		<input type="text" name="campoText5" class="jqalphanumeric jqrestrict"/>
-		<br />
-		<label for="campoText5">alphaextra</label>
-		<input type="text" name="campoText5" class="jqalphaextra"/>
-		<br />
-		<label for="campoText5">alphaextra + restrict</label>
-		<input type="text" name="campoText5" class="jqalphaextra jqrestrict"/>
-		<br />
-		<label for="campoText6">numeric</label>
-		<input type="text" name="campoText6" class="jqnumeric"/>
-		<br />
-		<label for="campoText7">numeric restrict</label>
-		<input type="text" name="campoText7" class="jqnumeric jqrestrict"/>
-		<br />
-		<label for="campoText8">percent</label>
-		<input type="text" name="campoText8" class="jqpercent"/>
-		<br />
-		<label for="campoText9">percent restrict</label>
-		<input type="text" name="campoText9" class="jqpercent jqrestrict"/>
-		<br />
-		<label for="campoText10">float</label>
-		<input type="text" name="campoText10" class="jqfloat"/>
-		<br />
-		<label for="campoText11">float restrict</label>
-		<input type="text" name="campoText11" class="jqfloat jqrestrict"/>
-		<br />
-		<label for="campoText12">money</label>
-		<input type="text" name="campoText12" class="jqmoney"/>
-		<br />
-		<label for="campoText13">money restrict</label>
-		<input type="text" name="campoText13" class="jqmoney jqrestrict"/>
-		<br />
-		<label for="campoSelect1">nonZero</label>
-		<select name="campoSelect1" class="jqnonzero">
-			<option value="0">Zero</option>
-			<option value="1">uno</option>
-			<option value="2">dos</option>
-		</select>
-		<br />
-		<label for="campoSelect2">required</label>
-		<select name="campoSelect2" class="jqrequired">
-			<option value="">nothing</option>
-			<option value="0">Zero</option>
-			<option value="1">uno</option>
-			<option value="2">dos</option>
-		</select>
-		<br />
-		
-		
-		<button onclick="validateAuto($(this),true); return false;">Validar solo esta forma(Auto)</button>
-		<button onclick="validateAuto($(this),false); return false;">Solo Comprobar Forma</button>
-	</form>
-</fieldset>
+    <fieldset class="inline w160">
+            <label>Prueba de Formulario formDeDatos</label>
+            <form id ="formDeDatos">
+                    <textarea id="ponchis"></textarea>
+                    <label for="campoText1">Ninguna Clase agregada</label>
+                    <input type="text" name="campoText1"/>
+                    <br />
+                    <label for="campoText1">Decimal Format (jqnumber4d2)</label>
+                    <input type="text" name="campoText1" class="jqv-number4d2"/>
+                    <br />
+                    <label for="campoText2">required</label>
+                    <input type="text" name="campoText2" class="jqv-required"/>
+                    <br />
+                    <label for="campoText3">alphabetic</label>
+                    <input type="text" name="campoText3" class="jqv-alphabetic"/>
+                    <br />
+                    <label for="campoText4">alphabetic + required</label>
+                    <input type="text" name="campoText4" class="jqv-alphabetic jqv-required"/>
+                    <br />
+                    <label for="campoText3">alphabetic + restrict</label>
+                    <input type="text" name="campoText3" class="jqalphabetic jqrestrict"/>
+                    <br />
+                    <label for="campoText3">alphabetic + restrict + toUpper</label>
+                    <input type="text" name="campoText3" class="jqalphabetic jqrestrict jqup"/>
+                    <br />
+                    <label for="campoText5">alphanumeric</label>
+                    <input type="text" name="campoText5" class="jqalphanumeric"/>
+                    <br />
+                    <label for="campoText5">alphanumeric + restrict</label>
+                    <input type="text" name="campoText5" class="jqalphanumeric jqrestrict"/>
+                    <br />
+                    <label for="campoText5">alphaextra</label>
+                    <input type="text" name="campoText5" class="jqalphaextra"/>
+                    <br />
+                    <label for="campoText5">alphaextra + restrict</label>
+                    <input type="text" name="campoText5" class="jqalphaextra jqrestrict"/>
+                    <br />
+                    <label for="campoText6">numeric</label>
+                    <input type="text" name="campoText6" class="jqnumeric"/>
+                    <br />
+                    <label for="campoText7">numeric restrict</label>
+                    <input type="text" name="campoText7" class="jqnumeric jqrestrict"/>
+                    <br />
+                    <label for="campoText8">percent</label>
+                    <input type="text" name="campoText8" class="jqpercent"/>
+                    <br />
+                    <label for="campoText9">percent restrict</label>
+                    <input type="text" name="campoText9" class="jqpercent jqrestrict"/>
+                    <br />
+                    <label for="campoText10">float</label>
+                    <input type="text" name="campoText10" class="jqfloat"/>
+                    <br />
+                    <label for="campoText11">float restrict</label>
+                    <input type="text" name="campoText11" class="jqfloat jqrestrict"/>
+                    <br />
+                    <label for="campoText12">money</label>
+                    <input type="text" name="campoText12" class="jqmoney"/>
+                    <br />
+                    <label for="campoText13">money restrict</label>
+                    <input type="text" name="campoText13" class="jqmoney jqrestrict"/>
+                    <br />
+                    <label for="campoSelect1">nonZero</label>
+                    <select name="campoSelect1" class="jqnonzero">
+                            <option value="0">Zero</option>
+                            <option value="1">uno</option>
+                            <option value="2">dos</option>
+                    </select>
+                    <br />
+                    <label for="campoSelect2">required</label>
+                    <select name="campoSelect2" class="jqrequired">
+                            <option value="">nothing</option>
+                            <option value="0">Zero</option>
+                            <option value="1">uno</option>
+                            <option value="2">dos</option>
+                    </select>
+                    <br />
 
-<fieldset class="inline w160">
-	<div id="divDeDatos">
-		<label for="campoText1">Ninguna Clase agregada</label>
-		<input type="text" name="campoText1"/>
-		<br />
-		<label for="campoText1">Decimal Format (jqnumber4d2)</label>
-		<input type="text" name="campoText1" class="jqnumber4d2"/>
-		<br />
-		<label for="campoText2">required</label>
-		<input type="text" name="campoText2" class="jqrequired"/>
-		<br />
-		<label for="campoText3">alphabetic</label>
-		<input type="text" name="campoText3" class="jqalphabetic"/>
-		<br />
-		<label for="campoText4">alphabetic + required</label>
-		<input type="text" name="campoText4" class="jqalphabetic jqrequired"/>
-		<br />
-		<label for="campoText3">alphabetic + restrict</label>
-		<input type="text" name="campoText3" class="jqalphabetic jqrestrict"/>
-		<br />
-		<label for="campoText3">alphabetic + restrict + toUpper</label>
-		<input type="text" name="campoText3" class="jqalphabetic jqrestrict jqup"/>
-		<br />
-		<label for="campoText5">alphanumeric</label>
-		<input type="text" name="campoText5" class="jqalphanumeric"/>
-		<br />
-		<label for="campoText5">alphanumeric + restrict</label>
-		<input type="text" name="campoText5" class="jqalphanumeric jqrestrict"/>
-		<br />
-		<label for="campoText5">alphaextra</label>
-		<input type="text" name="campoText5" class="jqalphaextra"/>
-		<br />
-		<label for="campoText5">alphaextra + restrict</label>
-		<input type="text" name="campoText5" class="jqalphaextra jqrestrict"/>
-		<br />
-		<label for="campoText6">numeric</label>
-		<input type="text" name="campoText6" class="jqnumeric"/>
-		<br />
-		<label for="campoText7">numeric restrict</label>
-		<input type="text" name="campoText7" class="jqnumeric jqrestrict"/>
-		<br />
-		<label for="campoText8">percent</label>
-		<input type="text" name="campoText8" class="jqpercent"/>
-		<br />
-		<label for="campoText9">percent restrict</label>
-		<input type="text" name="campoText9" class="jqpercent jqrestrict"/>
-		<br />
-		<label for="campoText10">float</label>
-		<input type="text" name="campoText10" class="jqfloat"/>
-		<br />
-		<label for="campoText11">float restrict</label>
-		<input type="text" name="campoText11" class="jqfloat jqrestrict"/>
-		<br />
-		<label for="campoText12">money</label>
-		<input type="text" name="campoText12" class="jqmoney"/>
-		<br />
-		<label for="campoText13">money restrict</label>
-		<input type="text" name="campoText13" class="jqmoney jqrestrict"/>
-		<br />
-		<label for="campoSelect1">nonZero</label>
-		<select name="campoSelect1" class="jqnonzero">
-			<option value="0">Zero</option>
-			<option value="1">uno</option>
-			<option value="2">dos</option>
-		</select>
-		<br />
-		<label for="campoSelect2">required</label>
-		<select name="campoSelect2" class="jqrequired">
-			<option value="">nothing</option>
-			<option value="0">Zero</option>
-			<option value="1">uno</option>
-			<option value="2">dos</option>
-		</select>
-		<br />
-		<button onclick="validateForId('divDeDatos', true); return false;">Validar inputs dentro de Div "divDeDatos"</button>
-		<button onclick="validateForId('divDeDatos', false); return false;">Solo Comprobar Div "divDeDatos"</button>
-	</div>
-</fieldset>
-<fieldset class="inline w160">
-	<button onclick="validateAll(true); return false;">Validar inputs de toda la pagina</button>
-	<button onclick="validateAll(false); return false;">Solo Comprobar de toda la Pagina</button>
-</fieldset>
 
-<fieldset>
-	<legend>Clases que valida el jQValidator por Default</legend>
-	<ul>
-		<li>Clases de combinacion
-			<ul>
-				<li><b>jqrequired:</b> esta clase se puede usar sola o combinada, hace que el campo con esta clase no se pueda dejar vacio.</li>
-				<li><b>jqrestrict:</b> esta clase restringe que el usuario no coloque mas chars que los permitidos por la clase validadora que se le combino</li>
-				<li><b>jqlow:</b> convierte el contenido del input con esta clase en minusculas al hacer un blur</li>
-				<li><b>jqup:</b> convierte el contenido del input con esta clase en mayusculas al hacer un blur</li>
-			</ul>
-		</li>
-		<li>Clases de Formato
-			<ul>
-				<li><b>jqnumber99d99:</b> esta clase se puede usar sola o combinada, hace que el campo con esta clase se ajuste al formato que especificas, ejemplo jqnumber4d3 sera un numero con 4 enteros y 3 decimales.</li>				
-			</ul>
-		</li>
-		<li>Clases de Validacion
-			<ul>
-				<li><b>jqalphabetic</b></li>
-				<li><b>jqalphanumeric</b></li>
-				<li><b>jqalphaextra</b></li>
-				<li><b>jqnumeric</b></li>
-				<li><b>jqpercent</b></li>
-				<li><b>jqfloat</b></li>
-				<li><b>jqmoney</b></li>
-				<li><b>jqnonzero</b></li>
-				<li><b>jqemail</b></li>
-				<li><b>jqphone</b></li>
-				<li><b>jqcell-phone</b></li>
-				<li><b>jqcurp</b></li>
-				<li><b>jqrfc</b></li>
-				<li><b>jqrfcfisica</b></li>
-				<li><b>jqrfcmoral</b></li>
-				<li><b>jqdate-mx</b></li>
-				<li><b>jqmes</b></li>
-			</ul>
-		</li>
-		
-	</ul>
-</fieldset>
-</body>
+                    <button onclick="validateAuto($(this),true); return false;">Validar solo esta forma(Auto)</button>
+                    <button onclick="validateAuto($(this),false); return false;">Solo Comprobar Forma</button>
+            </form>
+    </fieldset>
+
+    <fieldset class="inline w160">
+            <div id="divDeDatos">
+                    <label for="campoText1">Ninguna Clase agregada</label>
+                    <input type="text" name="campoText1"/>
+                    <br />
+                    <label for="campoText1">Decimal Format (jqnumber4d2)</label>
+                    <input type="text" name="campoText1" class="jqnumber4d2"/>
+                    <br />
+                    <label for="campoText2">required</label>
+                    <input type="text" name="campoText2" class="jqrequired"/>
+                    <br />
+                    <label for="campoText3">alphabetic</label>
+                    <input type="text" name="campoText3" class="jqalphabetic"/>
+                    <br />
+                    <label for="campoText4">alphabetic + required</label>
+                    <input type="text" name="campoText4" class="jqalphabetic jqrequired"/>
+                    <br />
+                    <label for="campoText3">alphabetic + restrict</label>
+                    <input type="text" name="campoText3" class="jqalphabetic jqrestrict"/>
+                    <br />
+                    <label for="campoText3">alphabetic + restrict + toUpper</label>
+                    <input type="text" name="campoText3" class="jqalphabetic jqrestrict jqup"/>
+                    <br />
+                    <label for="campoText5">alphanumeric</label>
+                    <input type="text" name="campoText5" class="jqalphanumeric"/>
+                    <br />
+                    <label for="campoText5">alphanumeric + restrict</label>
+                    <input type="text" name="campoText5" class="jqalphanumeric jqrestrict"/>
+                    <br />
+                    <label for="campoText5">alphaextra</label>
+                    <input type="text" name="campoText5" class="jqalphaextra"/>
+                    <br />
+                    <label for="campoText5">alphaextra + restrict</label>
+                    <input type="text" name="campoText5" class="jqalphaextra jqrestrict"/>
+                    <br />
+                    <label for="campoText6">numeric</label>
+                    <input type="text" name="campoText6" class="jqnumeric"/>
+                    <br />
+                    <label for="campoText7">numeric restrict</label>
+                    <input type="text" name="campoText7" class="jqnumeric jqrestrict"/>
+                    <br />
+                    <label for="campoText8">percent</label>
+                    <input type="text" name="campoText8" class="jqpercent"/>
+                    <br />
+                    <label for="campoText9">percent restrict</label>
+                    <input type="text" name="campoText9" class="jqpercent jqrestrict"/>
+                    <br />
+                    <label for="campoText10">float</label>
+                    <input type="text" name="campoText10" class="jqfloat"/>
+                    <br />
+                    <label for="campoText11">float restrict</label>
+                    <input type="text" name="campoText11" class="jqfloat jqrestrict"/>
+                    <br />
+                    <label for="campoText12">money</label>
+                    <input type="text" name="campoText12" class="jqmoney"/>
+                    <br />
+                    <label for="campoText13">money restrict</label>
+                    <input type="text" name="campoText13" class="jqmoney jqrestrict"/>
+                    <br />
+                    <label for="campoSelect1">nonZero</label>
+                    <select name="campoSelect1" class="jqnonzero">
+                            <option value="0">Zero</option>
+                            <option value="1">uno</option>
+                            <option value="2">dos</option>
+                    </select>
+                    <br />
+                    <label for="campoSelect2">required</label>
+                    <select name="campoSelect2" class="jqrequired">
+                            <option value="">nothing</option>
+                            <option value="0">Zero</option>
+                            <option value="1">uno</option>
+                            <option value="2">dos</option>
+                    </select>
+                    <br />
+                    <button onclick="validateForId('divDeDatos', true); return false;">Validar inputs dentro de Div "divDeDatos"</button>
+                    <button onclick="validateForId('divDeDatos', false); return false;">Solo Comprobar Div "divDeDatos"</button>
+            </div>
+    </fieldset>
+    <fieldset class="inline w160">
+            <button onclick="validateAll(true); return false;">Validar inputs de toda la pagina</button>
+            <button onclick="validateAll(false); return false;">Solo Comprobar de toda la Pagina</button>
+    </fieldset>
+
+    <fieldset>
+            <legend>Clases que valida el jQValidator por Default</legend>
+            <ul>
+                    <li>Clases de combinacion
+                            <ul>
+                                    <li><b>jqrequired:</b> esta clase se puede usar sola o combinada, hace que el campo con esta clase no se pueda dejar vacio.</li>
+                                    <li><b>jqrestrict:</b> esta clase restringe que el usuario no coloque mas chars que los permitidos por la clase validadora que se le combino</li>
+                                    <li><b>jqlow:</b> convierte el contenido del input con esta clase en minusculas al hacer un blur</li>
+                                    <li><b>jqup:</b> convierte el contenido del input con esta clase en mayusculas al hacer un blur</li>
+                            </ul>
+                    </li>
+                    <li>Clases de Formato
+                            <ul>
+                                    <li><b>jqnumber99d99:</b> esta clase se puede usar sola o combinada, hace que el campo con esta clase se ajuste al formato que especificas, ejemplo jqnumber4d3 sera un numero con 4 enteros y 3 decimales.</li>				
+                            </ul>
+                    </li>
+                    <li>Clases de Validacion
+                            <ul>
+                                    <li><b>jqalphabetic</b></li>
+                                    <li><b>jqalphanumeric</b></li>
+                                    <li><b>jqalphaextra</b></li>
+                                    <li><b>jqnumeric</b></li>
+                                    <li><b>jqpercent</b></li>
+                                    <li><b>jqfloat</b></li>
+                                    <li><b>jqmoney</b></li>
+                                    <li><b>jqnonzero</b></li>
+                                    <li><b>jqemail</b></li>
+                                    <li><b>jqphone</b></li>
+                                    <li><b>jqcell-phone</b></li>
+                                    <li><b>jqcurp</b></li>
+                                    <li><b>jqrfc</b></li>
+                                    <li><b>jqrfcfisica</b></li>
+                                    <li><b>jqrfcmoral</b></li>
+                                    <li><b>jqdate-mx</b></li>
+                                    <li><b>jqmes</b></li>
+                            </ul>
+                    </li>
+
+            </ul>
+    </fieldset>
+    </body>
 </html>
