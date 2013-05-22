@@ -148,6 +148,12 @@ jQuery(document).ready(function($) {
             e.preventDefault();
         }
     });
+    // este handler maneja la clase automatica del validador Auto con alerta
+    $(document).on('click','.jqv-validate-auto-alert',function(e){
+        if(!validateAuto($(this),true)){
+            e.preventDefault();
+        }
+    });
 
     //TODO: Tomar valores desde el arreglo principal de errores.
     $(document).on('keypress','.jqv-restrict',function(e){

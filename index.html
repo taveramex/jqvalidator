@@ -1,222 +1,152 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>jQValidator 1.5Beta Demo Page</title>
+        <title>jQValidator</title>
+        
+        <!-- this ones are just for the style of this demos page, you don't need them -->
+        <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+        <style>
+            .hero-unit{
+                background: url("css/images/pat_squairy.png") repeat scroll center center transparent;
+            }
+            .marketing-byline{
+                color: #999999;
+                font-size: 20px;
+                font-weight: 300;
+                line-height: 1.25;
+                margin-bottom: 40px;
+            }
+            /* Sticky footer styles
+                -------------------------------------------------- */
+                html,
+                body {
+                height: 100%;
+                /* The html and body elements cannot have any padding or margin. */
+                }
+                /* Wrapper for page content to push down footer */
+                #wrap {
+                    min-height: 100%;
+                    height: auto !important;
+                    height: 100%;
+                    /* Negative indent footer by it's height */
+                    margin: 0 auto -30px;
+                    text-align: center;
+                /*    width: 960px;*/
+                }
+                /* Set the fixed height of the footer here */
+                #push,
+                #footer {
+                height: 30px;
+                }
+
+                #footer {
+                background-color: #000;
+                }
+                #footer{
+                    text-align: center;
+                    padding: 20px;
+                }
+                /* Lastly, apply responsive CSS fixes as necessary */
+                @media (max-width: 767px) {
+                #footer {
+
+                margin: 0 -20px;
+                padding: 20px 20px;
+                }
+                } 
+        </style>
+        
         <script type="text/javascript" src="js/jquery-1.9.0.min.js" ></script>
-        <script type="text/javascript" src="js/jQValidator.js" charset="ISO-8859-1"></script>
+        <script type="text/javascript" src="js/jQValidator1.5b.js" charset="ISO-8859-1"></script>
     </head>
     <body>
-
-    <h1>jQValidator 1.5Beta Demo</h1>
-    <br/>
-    <br/>
-
-
-    <fieldset class="inline w160">
-            <label>Prueba de Formulario formDeDatos</label>
-            <form id ="formDeDatos">
-                    <textarea id="ponchis"></textarea>
-                    <label for="campoText1">Ninguna Clase agregada</label>
-                    <input type="text" name="campoText1"/>
-                    <br />
-                    <label for="campoText1">Decimal Format (jqnumber4d2)</label>
-                    <input type="text" name="campoText1" class="jqv-number4d2"/>
-                    <br />
-                    <label for="campoText2">required</label>
-                    <input type="text" name="campoText2" class="jqv-required"/>
-                    <br />
-                    <label for="campoText3">alphabetic</label>
-                    <input type="text" name="campoText3" class="jqv-alphabetic"/>
-                    <br />
-                    <label for="campoText4">alphabetic + required</label>
-                    <input type="text" name="campoText4" class="jqv-alphabetic jqv-required"/>
-                    <br />
-                    <label for="campoText3">alphabetic + restrict</label>
-                    <input type="text" name="campoText3" class="jqalphabetic jqrestrict"/>
-                    <br />
-                    <label for="campoText3">alphabetic + restrict + toUpper</label>
-                    <input type="text" name="campoText3" class="jqalphabetic jqrestrict jqup"/>
-                    <br />
-                    <label for="campoText5">alphanumeric</label>
-                    <input type="text" name="campoText5" class="jqalphanumeric"/>
-                    <br />
-                    <label for="campoText5">alphanumeric + restrict</label>
-                    <input type="text" name="campoText5" class="jqalphanumeric jqrestrict"/>
-                    <br />
-                    <label for="campoText5">alphaextra</label>
-                    <input type="text" name="campoText5" class="jqalphaextra"/>
-                    <br />
-                    <label for="campoText5">alphaextra + restrict</label>
-                    <input type="text" name="campoText5" class="jqalphaextra jqrestrict"/>
-                    <br />
-                    <label for="campoText6">numeric</label>
-                    <input type="text" name="campoText6" class="jqnumeric"/>
-                    <br />
-                    <label for="campoText7">numeric restrict</label>
-                    <input type="text" name="campoText7" class="jqnumeric jqrestrict"/>
-                    <br />
-                    <label for="campoText8">percent</label>
-                    <input type="text" name="campoText8" class="jqpercent"/>
-                    <br />
-                    <label for="campoText9">percent restrict</label>
-                    <input type="text" name="campoText9" class="jqpercent jqrestrict"/>
-                    <br />
-                    <label for="campoText10">float</label>
-                    <input type="text" name="campoText10" class="jqfloat"/>
-                    <br />
-                    <label for="campoText11">float restrict</label>
-                    <input type="text" name="campoText11" class="jqfloat jqrestrict"/>
-                    <br />
-                    <label for="campoText12">money</label>
-                    <input type="text" name="campoText12" class="jqmoney"/>
-                    <br />
-                    <label for="campoText13">money restrict</label>
-                    <input type="text" name="campoText13" class="jqmoney jqrestrict"/>
-                    <br />
-                    <label for="campoSelect1">nonZero</label>
-                    <select name="campoSelect1" class="jqnonzero">
-                            <option value="0">Zero</option>
-                            <option value="1">uno</option>
-                            <option value="2">dos</option>
-                    </select>
-                    <br />
-                    <label for="campoSelect2">required</label>
-                    <select name="campoSelect2" class="jqrequired">
-                            <option value="">nothing</option>
-                            <option value="0">Zero</option>
-                            <option value="1">uno</option>
-                            <option value="2">dos</option>
-                    </select>
-                    <br />
-
-
-                    <button onclick="validateAuto($(this),true); return false;">Validar solo esta forma(Auto)</button>
-                    <button onclick="validateAuto($(this),false); return false;">Solo Comprobar Forma</button>
-            </form>
-    </fieldset>
-
-    <fieldset class="inline w160">
-            <div id="divDeDatos">
-                    <label for="campoText1">Ninguna Clase agregada</label>
-                    <input type="text" name="campoText1"/>
-                    <br />
-                    <label for="campoText1">Decimal Format (jqnumber4d2)</label>
-                    <input type="text" name="campoText1" class="jqnumber4d2"/>
-                    <br />
-                    <label for="campoText2">required</label>
-                    <input type="text" name="campoText2" class="jqrequired"/>
-                    <br />
-                    <label for="campoText3">alphabetic</label>
-                    <input type="text" name="campoText3" class="jqalphabetic"/>
-                    <br />
-                    <label for="campoText4">alphabetic + required</label>
-                    <input type="text" name="campoText4" class="jqalphabetic jqrequired"/>
-                    <br />
-                    <label for="campoText3">alphabetic + restrict</label>
-                    <input type="text" name="campoText3" class="jqalphabetic jqrestrict"/>
-                    <br />
-                    <label for="campoText3">alphabetic + restrict + toUpper</label>
-                    <input type="text" name="campoText3" class="jqalphabetic jqrestrict jqup"/>
-                    <br />
-                    <label for="campoText5">alphanumeric</label>
-                    <input type="text" name="campoText5" class="jqalphanumeric"/>
-                    <br />
-                    <label for="campoText5">alphanumeric + restrict</label>
-                    <input type="text" name="campoText5" class="jqalphanumeric jqrestrict"/>
-                    <br />
-                    <label for="campoText5">alphaextra</label>
-                    <input type="text" name="campoText5" class="jqalphaextra"/>
-                    <br />
-                    <label for="campoText5">alphaextra + restrict</label>
-                    <input type="text" name="campoText5" class="jqalphaextra jqrestrict"/>
-                    <br />
-                    <label for="campoText6">numeric</label>
-                    <input type="text" name="campoText6" class="jqnumeric"/>
-                    <br />
-                    <label for="campoText7">numeric restrict</label>
-                    <input type="text" name="campoText7" class="jqnumeric jqrestrict"/>
-                    <br />
-                    <label for="campoText8">percent</label>
-                    <input type="text" name="campoText8" class="jqpercent"/>
-                    <br />
-                    <label for="campoText9">percent restrict</label>
-                    <input type="text" name="campoText9" class="jqpercent jqrestrict"/>
-                    <br />
-                    <label for="campoText10">float</label>
-                    <input type="text" name="campoText10" class="jqfloat"/>
-                    <br />
-                    <label for="campoText11">float restrict</label>
-                    <input type="text" name="campoText11" class="jqfloat jqrestrict"/>
-                    <br />
-                    <label for="campoText12">money</label>
-                    <input type="text" name="campoText12" class="jqmoney"/>
-                    <br />
-                    <label for="campoText13">money restrict</label>
-                    <input type="text" name="campoText13" class="jqmoney jqrestrict"/>
-                    <br />
-                    <label for="campoSelect1">nonZero</label>
-                    <select name="campoSelect1" class="jqnonzero">
-                            <option value="0">Zero</option>
-                            <option value="1">uno</option>
-                            <option value="2">dos</option>
-                    </select>
-                    <br />
-                    <label for="campoSelect2">required</label>
-                    <select name="campoSelect2" class="jqrequired">
-                            <option value="">nothing</option>
-                            <option value="0">Zero</option>
-                            <option value="1">uno</option>
-                            <option value="2">dos</option>
-                    </select>
-                    <br />
-                    <button onclick="validateForId('divDeDatos', true); return false;">Validar inputs dentro de Div "divDeDatos"</button>
-                    <button onclick="validateForId('divDeDatos', false); return false;">Solo Comprobar Div "divDeDatos"</button>
+        <div id='wrap'>
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="navbar-inner">
+                  <div class="container">
+                    <a href="./index.html" class="brand">jQValidator</a>
+                    <div class="nav-collapse collapse">
+                      <ul class="nav">
+                        <li class="active">
+                          <a href="./index.html">Inicio</a>
+                        </li>
+                        <li class="">
+                          <a href="./index.html">Como Funciona</a>
+                        </li>
+                        <li class="">
+                          <a href="./index.html">Licencia</a>
+                        </li>
+                        <li class="">
+                          <a href="./index.html">Acerca</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
             </div>
-    </fieldset>
-    <fieldset class="inline w160">
-            <button onclick="validateAll(true); return false;">Validar inputs de toda la pagina</button>
-            <button onclick="validateAll(false); return false;">Solo Comprobar de toda la Pagina</button>
-    </fieldset>
+            <div class='container'>
+                <div class='hero-unit'>
+                    <h1>jQValidator</h1>
+                    <ul class='inline'>
+                        <li>Ultima Version 1.5 Beta</li>
+                        <li>jQuery 1.7+ Compatible</li>
+                        <li><a href="js/jQValidator1.5b.js" title='recuerda "salvar como" ;)' class='btn btn-success'>Download</a>
+                    </ul>
+                    <code>git clone https://code.google.com/p/jqvalidator/</code>
+                    
+                </div>
 
-    <fieldset>
-            <legend>Clases que valida el jQValidator por Default</legend>
-            <ul>
-                    <li>Clases de combinacion
-                            <ul>
-                                    <li><b>jqrequired:</b> esta clase se puede usar sola o combinada, hace que el campo con esta clase no se pueda dejar vacio.</li>
-                                    <li><b>jqrestrict:</b> esta clase restringe que el usuario no coloque mas chars que los permitidos por la clase validadora que se le combino</li>
-                                    <li><b>jqlow:</b> convierte el contenido del input con esta clase en minusculas al hacer un blur</li>
-                                    <li><b>jqup:</b> convierte el contenido del input con esta clase en mayusculas al hacer un blur</li>
-                            </ul>
-                    </li>
-                    <li>Clases de Formato
-                            <ul>
-                                    <li><b>jqnumber99d99:</b> esta clase se puede usar sola o combinada, hace que el campo con esta clase se ajuste al formato que especificas, ejemplo jqnumber4d3 sera un numero con 4 enteros y 3 decimales.</li>				
-                            </ul>
-                    </li>
-                    <li>Clases de Validacion
-                            <ul>
-                                    <li><b>jqalphabetic</b></li>
-                                    <li><b>jqalphanumeric</b></li>
-                                    <li><b>jqalphaextra</b></li>
-                                    <li><b>jqnumeric</b></li>
-                                    <li><b>jqpercent</b></li>
-                                    <li><b>jqfloat</b></li>
-                                    <li><b>jqmoney</b></li>
-                                    <li><b>jqnonzero</b></li>
-                                    <li><b>jqemail</b></li>
-                                    <li><b>jqphone</b></li>
-                                    <li><b>jqcell-phone</b></li>
-                                    <li><b>jqcurp</b></li>
-                                    <li><b>jqrfc</b></li>
-                                    <li><b>jqrfcfisica</b></li>
-                                    <li><b>jqrfcmoral</b></li>
-                                    <li><b>jqdate-mx</b></li>
-                                    <li><b>jqmes</b></li>
-                            </ul>
-                    </li>
-
-            </ul>
-    </fieldset>
+                <div class='row'>
+                    <div class='span12 text-center '>
+                        <h1>Un Validador JavaScript??</h1>
+                        <p class='marketing-byline'>jQValidator es un validador JavaScript basado en la libreria jQuery apuntado a simplificar las validaciones que se hacen en los formularios html, sus principales ventajas son:</p>
+                    </div>
+                    <div class='span12 text-center'>
+                        <div class='row'>
+                            <div class='span4'>
+                                <img src='css/images/rapido128.png' alt='Rapido' class='img-rounded' /> 
+                                <h3>Rapido</h3>
+                                <p>Dise&ntilde;amos a este plugin para ser rapido y evitar sobrecargar tu navegador.</p>
+                            </div>
+                            <div class='span4'>
+                                <img src='css/images/js128.png' alt='Rapido' class='img-rounded' /> 
+                                <h3>No mas codigo!</h3>
+                                <p>No ocupas poner mas codigo JS, este validador solo se basa en las clases CSS para hacer su trabajo, mejor aun es <strong>dinamico</strong>!</p>
+                            </div>
+                            <div class='span4'>
+                                <img src='css/images/licence128.png' alt='abierto' class='img-rounded' /> 
+                                <h3>Licencia?</h3>
+                                <p>Puedes usarlo en tus proyectos personales y de negocios, no hay restriccion, ya que es libre como el aire que respiras.</p>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='span4'>
+                                <img src='css/images/api128.png' alt='abierto' class='img-rounded' /> 
+                                <h3>Flexibilidad</h3>
+                                <p>Necesitas validar si y solo si el usuario realizo un hover y despues le pico a... Hey, sabemos que hay clientes dificiles, tambien hay funciones extra e JS para ti ;).</p>
+                            </div>
+                            <div class='span4'>
+                                <img src='css/images/googleDev128.png' alt='abierto' class='img-rounded' /> 
+                                <h3>Google Code</h3>
+                                <p>todo nuestro progreso y versiones estan en un repositorio GIT de Google Code, si quieres puedes hasta echarnos una mano.</p>
+                            </div>
+                            <div class='span4'>
+                                <img src='css/images/jquery128.png' alt='abierto' class='img-rounded' /> 
+                                <h3>jQuery</h3>
+                                <p>Basado en la version 1.9.0 de JQuery lo que significa Cross-Browsing Seguro! olvidate de sufrir por IE.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='span12 well well-large text-center'>
+                        <h3>Pero hombre, todo esto son solo palabras, pasa a los ejemplos y preparate a tener un trabajo de codificacion mas facil!</h3>
+                    </div>
+                </div>
+                <div id='push'></div>
+            </div>
+        </div>
+        <div id='footer' class="">
+            Mando (c) 2013
+        </div>
     </body>
 </html>
